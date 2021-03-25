@@ -15,3 +15,21 @@ Your computer must already have the software required to run the "keytool" comma
  # How to use
 
 Just run the shittyKeyGen.exe from this repo if you are on windows or compile the shittyKeyGen.cpp yourself because its open-source
+
+# Contributors
+
+Special thanks to these people for their ideas and contributions
+
+- Juan O. Lopez (Director of the department of computer science at the University of Puerto Rico at Arecibo)
+
+  His suggestion was to use something like the sample code below to automatically detect the OS rather than prompting the user to manually input which OS they were using(like I did at first).
+
+  ~~~c++
+  isWindows = false;
+  #if _WIN64
+      isWindows =  true; // 64-bit Windows
+  #elif _WIN32
+      isWindows = true; // 32-bit Windows
+  ~~~
+
+  

@@ -12,22 +12,13 @@ string commandNameGenerator(string path,string name,bool isWindows){
 }
 
 bool isWin(string os){
-  string answer;
-  bool correctAnswer;
-  bool isWindows;
-  do{
-    cout << "Which OS are you using? (win,mac,linux) please type as shown(only lower case)" << endl;
-    cin >> answer;
-    if(answer == "win"){
-      correctAnswer = true;
-      isWindows = true;
-    }else if(answer == "mac" || answer == "linux"){
-      correctAnswer = true;
-      isWindows = false;
-    }else{
-      correctAnswer = false;
-    }
-  }while(!correctAnswer);
+  bool isWindows = false;
+  #if _WIN64
+    isWindows = true;
+  #endif
+  #if _WIN32
+    isWindows = true;
+  #endif
   return isWindows;
 }
 
@@ -56,12 +47,6 @@ int main(){
   //TODO: Task complete notification
   cout << "Successfully created the key: " << nameOfTheKey << ".jks" << endl;
   cout << "At: " << absolutePath << endl;
-  //change directory to the folder and print its contents
-  string changeDirectoryCommand = "cd " + absolutePath;
-  //Change directory
-  system(changeDirectoryCommand.c_str());
-  //Print directory contents
-  system("dir");
   //Pause the program to prevent it from exiting and looking like an error
   system("pause");
 }
