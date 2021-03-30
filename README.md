@@ -32,4 +32,8 @@ Special thanks to these people for their ideas and contributions
       isWindows = true; // 32-bit Windows
   ~~~
 
-  
+# Important details
+
+I found out that you cannot go over a 10k days limit when generating the key. If you do it sets itself to a very small number which makes it invalid to be used on the Google Play store, so I updated this app with the maximum 10k limit.
+
+Specified at [authentication - OpenSSH : Key-based authorization, maximum key length - Server Fault](https://serverfault.com/questions/160268/openssh-key-based-authorization-maximum-key-length#:~:text=There is no maximum key,for a 17kbit RSA key.)

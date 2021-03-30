@@ -5,7 +5,7 @@ using namespace std;
 
 string commandNameGenerator(string path,string name,bool isWindows){
   const string firstPart = "keytool -genkey -v -keystore ";
-  const string secondPart = " -storetype JKS -keyalg RSA -keysize 2048 -validity 10000000000000 -alias key";
+  const string secondPart = " -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key";
   string concatenatedPath = path + (isWindows ? "\\" : "/") + name + ".jks";
   string command = firstPart + concatenatedPath + secondPart;
   return command;
